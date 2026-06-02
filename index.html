@@ -1,0 +1,2193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proquality Ilha Clube – Academia completa com musculação, aulas coletivas e personal trainer no Rio de Janeiro. Agende sua aula experimental grátis!">
+    <meta name="keywords" content="academia, Rio de Janeiro, Ilha do Governador, musculação, aulas coletivas, personal trainer, funcional, spinning, fitness, Proquality, Qualityzone">
+    <meta name="author" content="Proquality Ilha Clube">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💪</text></svg>">
+    <title>Proquality Ilha Clube – Academia Completa com Musculação, Aulas Coletivas e Personal no Rio de Janeiro</title>
+
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --verde: #0d9488;
+            --verde-escuro: #0f4c45;
+            --verde-claro: #e8f5f0;
+            --laranja: #f97316;
+            --laranja-escuro: #ea580c;
+            --laranja-claro: #fff7ed;
+            --preto: #1a1a2e;
+            --carvao: #2d2d3f;
+            --cinza-urbano: #6b7280;
+            --branco: #ffffff;
+            --off-white: #f9fafb;
+            --amarelo-energetico: #fbbf24;
+            --sombra-suave: 0 4px 24px rgba(0, 0, 0, 0.08);
+            --sombra-media: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --sombra-laranja: 0 8px 30px rgba(249, 115, 22, 0.35);
+            --borda-arredondada: 24px;
+            --borda-arredondada-sm: 14px;
+            --transicao: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+            background-color: var(--branco);
+            color: var(--carvao);
+            line-height: 1.6;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        /* Cursor customizado sutil */
+        @media (hover: hover) and (pointer: fine) {
+            body {
+                cursor: default;
+            }
+            a,
+            button,
+            .card-hover,
+            .clickable {
+                cursor: pointer;
+            }
+            a:hover,
+            button:hover,
+            .card-hover:hover {
+                cursor: pointer;
+            }
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 12px 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .header.scrolled {
+            background: rgba(26, 26, 46, 0.85);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+            padding: 8px 0;
+        }
+
+        .header-inner {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .logo {
+            flex-shrink: 0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1001;
+        }
+        .logo-icon {
+            width: 46px;
+            height: 46px;
+            background: var(--laranja);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+            font-weight: 800;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+        .logo-text {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            letter-spacing: 2px;
+            line-height: 1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            transition: color var(--transicao);
+        }
+        .header.scrolled .logo-text {
+            color: #fff;
+            text-shadow: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 4px 0;
+            transition: color var(--transicao);
+            white-space: nowrap;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+        }
+        .header.scrolled .nav-links a {
+            text-shadow: none;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--laranja);
+            border-radius: 2px;
+            transition: all 0.35s ease;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover {
+            color: var(--laranja);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+        .btn-whatsapp-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #25d366;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all var(--transicao);
+            white-space: nowrap;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp-header:hover {
+            background: #1faa51;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+        }
+        .btn-whatsapp-header .online-dot {
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+        }
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .btn-cta-header {
+            background: var(--laranja);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all var(--transicao);
+            white-space: nowrap;
+            box-shadow: var(--sombra-laranja);
+            animation: pulse-btn 3s ease-in-out infinite;
+        }
+        @keyframes pulse-btn {
+            0%,
+            100% {
+                box-shadow: 0 8px 30px rgba(249, 115, 22, 0.35);
+            }
+            50% {
+                box-shadow: 0 8px 45px rgba(249, 115, 22, 0.6), 0 0 0 8px rgba(249, 115, 22, 0.08);
+            }
+        }
+        .btn-cta-header:hover {
+            background: var(--laranja-escuro);
+            transform: scale(1.05);
+            box-shadow: 0 10px 35px rgba(249, 115, 22, 0.5);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #fff;
+            border-radius: 3px;
+            transition: all 0.35s ease;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        }
+        .header.scrolled .hamburger span {
+            box-shadow: none;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background: rgba(26, 26, 46, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .mobile-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            transition: color var(--transicao);
+        }
+        .mobile-menu a:hover {
+            color: var(--laranja);
+        }
+        .mobile-menu .btn-cta-header {
+            font-size: 1.2rem;
+            padding: 14px 32px;
+            margin-top: 20px;
+        }
+
+        /* HERO SLIDER */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(26, 26, 46, 0.65) 0%, rgba(15, 76, 69, 0.55) 70%, rgba(26, 26, 46, 0.8) 100%);
+            z-index: 2;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: #fff;
+            max-width: 800px;
+            padding: 0 24px;
+            animation: fadeInUp 0.8s ease;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 300;
+            margin-bottom: 28px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-hero {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all var(--transicao);
+            display: inline-block;
+            white-space: nowrap;
+        }
+        .btn-hero-primary {
+            background: var(--laranja);
+            color: #fff;
+            box-shadow: var(--sombra-laranja);
+        }
+        .btn-hero-primary:hover {
+            background: var(--laranja-escuro);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(249, 115, 22, 0.5);
+        }
+        .btn-hero-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .btn-hero-secondary:hover {
+            background: #fff;
+            color: var(--preto);
+            transform: translateY(-3px);
+        }
+
+        .hero-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+        .hero-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all var(--transicao);
+        }
+        .hero-dots span.active {
+            background: var(--laranja);
+            width: 32px;
+            border-radius: 20px;
+        }
+        .hero-arrows {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+        .hero-arrows button {
+            pointer-events: auto;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all var(--transicao);
+            backdrop-filter: blur(4px);
+        }
+        .hero-arrows button:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+
+        /* FAIXA DE CONFIANÇA */
+        .faixa-confianca {
+            position: relative;
+            z-index: 5;
+            margin-top: -60px;
+            padding: 0 24px;
+        }
+        .faixa-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .faixa-card {
+            background: #fff;
+            border-radius: var(--borda-arredondada);
+            padding: 24px 20px;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: all var(--transicao);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .faixa-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--sombra-media);
+        }
+        .faixa-card .faixa-icon {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        .faixa-card h3 {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--verde-escuro);
+        }
+        .faixa-card p {
+            font-size: 0.85rem;
+            color: var(--cinza-urbano);
+        }
+
+        /* SEÇÕES GERAIS */
+        .section {
+            padding: 80px 24px;
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            letter-spacing: 2px;
+            color: var(--preto);
+            margin-bottom: 8px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--cinza-urbano);
+            font-size: 1.1rem;
+            margin-bottom: 48px;
+            font-weight: 400;
+        }
+
+        /* SOBRE */
+        .sobre-section {
+            background: var(--verde-claro);
+            position: relative;
+        }
+        .sobre-wave {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .sobre-wave svg {
+            width: 100%;
+            height: 60px;
+        }
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .sobre-img {
+            border-radius: var(--borda-arredondada);
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+            position: relative;
+        }
+        .sobre-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            border-radius: var(--borda-arredondada);
+        }
+        .sobre-img::after {
+            content: '';
+            position: absolute;
+            inset: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: calc(var(--borda-arredondada) - 6px);
+            pointer-events: none;
+        }
+        .sobre-texto h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: var(--preto);
+        }
+        .sobre-texto p {
+            color: var(--carvao);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .valor-card {
+            background: #fff;
+            border-radius: var(--borda-arredondada-sm);
+            padding: 20px 14px;
+            text-align: center;
+            border-left: 4px solid transparent;
+            transition: all var(--transicao);
+            box-shadow: var(--sombra-suave);
+            cursor: default;
+        }
+        .valor-card:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--laranja);
+            box-shadow: var(--sombra-media);
+        }
+        .valor-card .valor-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .valor-card h4 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--preto);
+        }
+        .valor-card p {
+            font-size: 0.8rem;
+            color: var(--cinza-urbano);
+            margin: 0;
+        }
+
+        /* MODALIDADES */
+        .modalidades-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .modalidade-card {
+            border-radius: var(--borda-arredondada);
+            overflow: hidden;
+            background: #fff;
+            box-shadow: var(--sombra-suave);
+            transition: all var(--transicao);
+            position: relative;
+            cursor: pointer;
+        }
+        .modalidade-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-media);
+        }
+        .modalidade-card .card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: transform 0.6s ease;
+        }
+        .modalidade-card:hover .card-img {
+            transform: scale(1.1);
+        }
+        .card-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(26, 26, 46, 0.85) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-img-icon {
+            font-size: 3.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+        }
+        .modalidade-card .card-body {
+            padding: 20px;
+        }
+        .modalidade-card .card-body h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: var(--preto);
+        }
+        .modalidade-card .card-body p {
+            font-size: 0.9rem;
+            color: var(--cinza-urbano);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .modalidade-card .card-body .destaque-tag {
+            display: inline-block;
+            background: var(--verde-claro);
+            color: var(--verde-escuro);
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        .btn-saiba-mais {
+            display: inline-block;
+            background: var(--laranja);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all var(--transicao);
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.25);
+        }
+        .btn-saiba-mais:hover {
+            background: var(--laranja-escuro);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+            transform: translateY(-2px);
+        }
+
+        /* PLANOS */
+        .planos-section {
+            background: #fafafa;
+            background-image: radial-gradient(circle, rgba(13, 148, 136, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .planos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .plano-card {
+            background: #fff;
+            border-radius: var(--borda-arredondada);
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: var(--sombra-suave);
+            transition: all var(--transicao);
+            position: relative;
+            border: 2px solid transparent;
+        }
+        .plano-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--sombra-media);
+        }
+        .plano-card.destaque {
+            border-color: var(--laranja);
+            box-shadow: var(--sombra-laranja);
+        }
+        .plano-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--laranja);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 6px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+        }
+        .plano-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            margin: 8px 0;
+            color: var(--preto);
+        }
+        .plano-preco {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--verde-escuro);
+        }
+        .plano-preco small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--cinza-urbano);
+        }
+        .plano-preco .riscado {
+            text-decoration: line-through;
+            color: #cbd5e1;
+            font-size: 1rem;
+            margin-right: 4px;
+        }
+        .plano-beneficios {
+            list-style: none;
+            text-align: left;
+            margin: 16px 0;
+            padding: 0;
+        }
+        .plano-beneficios li {
+            padding: 4px 0;
+            font-size: 0.85rem;
+            color: var(--carvao);
+        }
+        .plano-beneficios li::before {
+            content: '✅ ';
+            font-size: 0.8rem;
+        }
+        .btn-plano {
+            display: inline-block;
+            background: var(--laranja);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all var(--transicao);
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+        }
+        .btn-plano:hover {
+            background: var(--laranja-escuro);
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.5);
+            transform: scale(1.04);
+        }
+        .planos-cta-central {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        /* DEPOIMENTOS */
+        .depoimentos-section {
+            background: linear-gradient(135deg, var(--laranja-claro) 0%, var(--verde-claro) 100%);
+        }
+        .depoimentos-mural {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        .depoimento-destaque {
+            background: #fff;
+            border-radius: var(--borda-arredondada);
+            padding: 32px;
+            box-shadow: var(--sombra-media);
+            text-align: center;
+        }
+        .depoimento-destaque .antes-depois {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .antes-depois span {
+            background: var(--verde-claro);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .depoimento-destaque .estrelas {
+            color: var(--laranja);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .depoimento-destaque blockquote {
+            font-style: italic;
+            color: var(--carvao);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .depoimentos-laterais {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .depoimento-mini {
+            background: #fff;
+            border-radius: var(--borda-arredondada-sm);
+            padding: 16px;
+            box-shadow: var(--sombra-suave);
+            transition: all var(--transicao);
+            border-left: 3px solid var(--laranja);
+        }
+        .depoimento-mini:hover {
+            transform: translateX(4px);
+            box-shadow: var(--sombra-media);
+        }
+        .depoimento-mini .estrelas {
+            color: var(--laranja);
+            font-size: 0.9rem;
+        }
+        .depoimento-mini p {
+            font-size: 0.85rem;
+            color: var(--carvao);
+            line-height: 1.4;
+        }
+        .depoimento-mini .autor {
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--preto);
+            margin-top: 6px;
+        }
+
+        /* INSTAGRAM */
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+        }
+        .insta-item {
+            aspect-ratio: 1;
+            border-radius: var(--borda-arredondada-sm);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all var(--transicao);
+        }
+        .insta-item:hover {
+            transform: scale(1.03);
+        }
+        .insta-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transicao);
+            color: #fff;
+            font-size: 1.8rem;
+        }
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
+        }
+
+        /* EQUIPE */
+        .equipe-section {
+            background: var(--verde-claro);
+        }
+        .equipe-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+        .equipe-avatar {
+            cursor: pointer;
+            transition: all var(--transicao);
+        }
+        .equipe-avatar:hover {
+            transform: translateY(-6px);
+        }
+        .equipe-avatar .avatar-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto 12px;
+            border: 4px solid var(--laranja);
+            box-shadow: var(--sombra-media);
+            position: relative;
+        }
+        .equipe-avatar h4 {
+            font-weight: 700;
+            color: var(--preto);
+            margin-bottom: 2px;
+        }
+        .equipe-avatar p {
+            font-size: 0.85rem;
+            color: var(--cinza-urbano);
+        }
+        .equipe-avatar .cref {
+            font-size: 0.75rem;
+            color: var(--verde);
+            font-weight: 600;
+        }
+
+        /* LOCALIZAÇÃO */
+        .loc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .mapa-container {
+            border-radius: var(--borda-arredondada);
+            overflow: hidden;
+            box-shadow: var(--sombra-media);
+            height: 400px;
+        }
+        .mapa-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .loc-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .loc-info-item {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .loc-info-item .loc-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .loc-fotos {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .loc-fotos img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all var(--transicao);
+        }
+        .loc-fotos img:hover {
+            transform: scale(1.1);
+            box-shadow: var(--sombra-media);
+        }
+
+        /* FAQ */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #f9fafb;
+            border-radius: var(--borda-arredondada-sm);
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: all var(--transicao);
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 18px 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--preto);
+            font-family: 'Inter', sans-serif;
+        }
+        .faq-question .faq-icon {
+            font-size: 1.4rem;
+            transition: transform var(--transicao);
+            color: var(--laranja);
+        }
+        .faq-item.active .faq-question .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 20px;
+            color: var(--carvao);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 18px;
+        }
+
+        /* CTA FINAL */
+        .cta-final {
+            background: var(--verde-escuro);
+            color: #fff;
+            text-align: center;
+            padding: 60px 24px;
+            position: relative;
+        }
+        .cta-final h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .cta-final p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .cta-input-group {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .cta-input-group input {
+            flex: 1;
+            min-width: 200px;
+            padding: 14px 18px;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border var(--transicao);
+        }
+        .cta-input-group input:focus {
+            border-color: var(--laranja);
+        }
+        .btn-cta-final {
+            background: var(--laranja);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all var(--transicao);
+            box-shadow: var(--sombra-laranja);
+            white-space: nowrap;
+        }
+        .btn-cta-final:hover {
+            background: var(--laranja-escuro);
+            transform: scale(1.04);
+        }
+        .cupom-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: 1px dashed rgba(255, 255, 255, 0.5);
+            margin-top: 12px;
+        }
+
+        /* RODAPÉ */
+        .footer {
+            background: #1a1a2e;
+            color: #cbd5e1;
+            padding: 48px 24px 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+        .footer-col p,
+        .footer-col a {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 6px;
+            transition: color var(--transicao);
+        }
+        .footer-col a:hover {
+            color: var(--laranja);
+        }
+        .footer-logo-watermark {
+            opacity: 0.5;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all var(--transicao);
+        }
+        .footer-social a:hover {
+            background: var(--laranja);
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 32px;
+            padding-top: 16px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* BOTÃO WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            background: #25d366;
+            color: #fff;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            text-decoration: none;
+            transition: all var(--transicao);
+            animation: bounce-float 2s ease-in-out infinite;
+        }
+        @keyframes bounce-float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            70% {
+                transform: translateY(-6px);
+            }
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 36px rgba(37, 211, 102, 0.6);
+        }
+        .whatsapp-tooltip {
+            position: fixed;
+            bottom: 36px;
+            right: 100px;
+            z-index: 999;
+            background: #fff;
+            color: var(--preto);
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: var(--sombra-media);
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .whatsapp-tooltip.show {
+            opacity: 1;
+        }
+
+        /* ANIMAÇÕES DE ENTRADA */
+        .animar {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .animar.visivel {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animar-fade {
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+        .animar-fade.visivel {
+            opacity: 1;
+        }
+
+        /* RIPPLE EFFECT */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        .ripple::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        /* MODAL LIGHTBOX */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-overlay img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 2001;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .header-actions .btn-whatsapp-header {
+                display: none;
+            }
+            .modalidades-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .planos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .equipe-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .insta-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .depoimentos-mural {
+                grid-template-columns: 1fr;
+            }
+            .sobre-grid {
+                grid-template-columns: 1fr;
+            }
+            .loc-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .faixa-inner {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .valores-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 70vh;
+                min-height: 480px;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .modalidades-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .planos-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .equipe-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .insta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .faixa-inner {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .valores-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+                margin: 24px auto 0;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-social {
+                justify-content: center;
+            }
+            .header-actions .btn-cta-header {
+                font-size: 0.78rem;
+                padding: 8px 14px;
+            }
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            .whatsapp-tooltip {
+                right: 80px;
+                bottom: 28px;
+                font-size: 0.75rem;
+                padding: 8px 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modalidades-grid {
+                grid-template-columns: 1fr;
+            }
+            .equipe-grid {
+                grid-template-columns: 1fr;
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            .insta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+            .btn-cta-header {
+                padding: 8px 12px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ExerciseGym",
+            "name": "Proquality Ilha Clube",
+            "legalName": "Academia Qualityzone LTDA",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua X, número Y",
+                "addressLocality": "Rio de Janeiro",
+                "addressRegion": "RJ",
+                "addressCountry": "BR",
+                "postalCode": "21941-000"
+            },
+            "telephone": "+5521999999999",
+            "url": "https://proqualityilhaclube.com.br",
+            "openingHours": "Mo-Fr 06:00-22:00, Sa 08:00-16:00, Su 09:00-13:00",
+            "logo": "https://proqualityilhaclube.com.br/logo.png",
+            "image": "https://proqualityilhaclube.com.br/fachada.jpg",
+            "priceRange": "R$",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "1200"
+            },
+            "vatID": "CNPJ 40.178.481/0001-44"
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [{
+                "@type": "Question",
+                "name": "Preciso de avaliação física antes de começar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sim! A avaliação física é gratuita e inclusa em todos os planos. Agende sua avaliação e comece com segurança."
+                }
+            }, {
+                "@type": "Question",
+                "name": "Vocês oferecem aula experimental gratuita?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sim! Agende sua aula grátis e conheça nossa estrutura sem compromisso. É só chamar no WhatsApp ou preencher o formulário."
+                }
+            }, {
+                "@type": "Question",
+                "name": "Tem plano sem fidelidade?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Temos sim! Planos mensais, trimestrais e recorrentes. Confira as opções na seção Planos do nosso site."
+                }
+            }]
+        }
+    </script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#hero" class="logo">
+                <span class="logo-icon">PQ</span>
+                <span class="logo-text">Proquality<br>Ilha Clube</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#modalidades">Modalidades</a></li>
+                    <li><a href="#planos">Planos</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Proquality%20Ilha%20Clube!" class="btn-whatsapp-header" target="_blank" rel="noopener">
+                    <span class="online-dot"></span> (21) 9199938-2409
+                </a>
+                <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20aula%20gr%C3%A1tis!" class="btn-cta-header ripple" target="_blank" rel="noopener">Aula Grátis</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero" data-close>Início</a>
+        <a href="#sobre" data-close>Sobre Nós</a>
+        <a href="#modalidades" data-close>Modalidades</a>
+        <a href="#planos" data-close>Planos</a>
+        <a href="#depoimentos" data-close>Depoimentos</a>
+        <a href="#contato" data-close>Contato</a>
+        <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20agendar%20minha%20aula%20gr%C3%A1tis!" class="btn-cta-header" target="_blank" rel="noopener">Aula Grátis 💪</a>
+    </div>
+
+    <!-- HERO SLIDER -->
+    <section class="hero" id="hero">
+        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Transforme seu corpo,<br>transforme sua vida</h1>
+                <p>Treinos que desafiam, resultados que inspiram. A energia do Rio em cada repetição.</p>
+                <div class="hero-btns">
+                    <a href="#modalidades" class="btn-hero btn-hero-primary">Nossas Modalidades</a>
+                    <a href="https://wa.me/5521999999999?text=Quero%20agendar%20minha%20aula%20experimental%20gr%C3%A1tis!" class="btn-hero btn-hero-secondary" target="_blank" rel="noopener">Aula Experimental Grátis</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1400&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Muito mais que uma<br>academia, um clube</h1>
+                <p>Equipamentos de ponta, professores dedicados e a energia do Rio em cada treino.</p>
+                <div class="hero-btns">
+                    <a href="#sobre" class="btn-hero btn-hero-primary">Ver Estrutura</a>
+                    <a href="https://wa.me/5521999999999?text=Quero%20conhecer%20a%20estrutura!" class="btn-hero btn-hero-secondary" target="_blank" rel="noopener">Falar com a Equipe</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=1400&q=80');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Referência em fitness<br>e bem-estar no Rio</h1>
+                <p>Desde 2015 transformando vidas na Ilha do Governador. Unidade Ilha – RJ.</p>
+                <div class="hero-btns">
+                    <a href="#contato" class="btn-hero btn-hero-primary">Como Chegar</a>
+                    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20saber%20mais!" class="btn-hero btn-hero-secondary" target="_blank" rel="noopener">Fale Conosco</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-dots" id="heroDots">
+            <span class="active" data-slide="0"></span><span data-slide="1"></span><span data-slide="2"></span>
+        </div>
+        <div class="hero-arrows">
+            <button id="heroPrev" aria-label="Slide anterior">❮</button>
+            <button id="heroNext" aria-label="Próximo slide">❯</button>
+        </div>
+    </section>
+
+    <!-- FAIXA DE CONFIANÇA -->
+    <section class="faixa-confianca animar">
+        <div class="faixa-inner">
+            <div class="faixa-card">
+                <div class="faixa-icon">🏋️</div>
+                <h3>Equipamentos de Última Geração</h3>
+                <p>Aparelhos modernos e bem mantidos para o seu melhor treino.</p>
+            </div>
+            <div class="faixa-card">
+                <div class="faixa-icon">🆓</div>
+                <h3>Aula Experimental Grátis</h3>
+                <p>Conheça nossa estrutura e modalidades sem compromisso.</p>
+            </div>
+            <div class="faixa-card">
+                <div class="faixa-icon">⭐</div>
+                <h3>4,9 estrelas no Google</h3>
+                <p>+1.200 avaliações de alunos satisfeitos e motivados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NÓS -->
+    <section class="section sobre-section" id="sobre">
+        <div class="sobre-wave">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#fff"/></svg>
+        </div>
+        <div class="section-inner">
+            <div class="sobre-grid animar">
+                <div class="sobre-img">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=700&q=80" alt="Equipe de professores reunida com alunos em treino na academia Proquality Ilha Clube" loading="lazy">
+                </div>
+                <div class="sobre-texto">
+                    <h2>Proquality Ilha Clube – Muito mais que uma academia</h2>
+                    <p>Nascidos no coração do Rio de Janeiro, somos uma academia que respira movimento e superação. Nossa jornada começou no bairro da Ilha do Governador, com uma estrutura enxuta e o sonho de oferecer um atendimento realmente próximo e humanizado. Hoje nos orgulhamos de oferecer um clube completo, com musculação de ponta, estúdio de aulas coletivas, área funcional, avaliação física e nutricionista. Cada gota de suor e cada meta batida são nossa maior conquista.</p>
+                    <p><strong>Academia Qualityzone LTDA</strong> – CNPJ 40.178.481/0001-44, empresa séria, estabelecida e comprometida com a sua melhor versão.</p>
+                    <div class="valores-grid">
+                        <div class="valor-card">
+                            <div class="valor-icon">🎯</div>
+                            <h4>MISSÃO</h4>
+                            <p>Transformar vidas através do fitness com excelência e acolhimento.</p>
+                        </div>
+                        <div class="valor-card">
+                            <div class="valor-icon">👁️</div>
+                            <h4>VISÃO</h4>
+                            <p>Ser referência em bem-estar e performance no Rio de Janeiro.</p>
+                        </div>
+                        <div class="valor-card">
+                            <div class="valor-icon">❤️</div>
+                            <h4>VALORES</h4>
+                            <p>Respeito, dedicação, energia e compromisso com cada aluno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALIDADES -->
+    <section class="section" id="modalidades">
+        <div class="section-inner">
+            <h2 class="section-title animar">Do treino funcional às aulas coletivas,<br>temos tudo para o seu objetivo</h2>
+            <p class="section-subtitle animar">Escolha a modalidade que mais combina com você e venha treinar com a gente.</p>
+            <div class="modalidades-grid">
+                <div class="modalidade-card animar">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80');">
+                        <div class="card-img-overlay"><span class="card-img-icon">🏋️‍♂️</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Musculação Premium</h3>
+                        <span class="destaque-tag">Avaliação física inclusa</span>
+                        <p>Aparelhos de última geração, halteres livres e máquinas articuladas. Treinos acompanhados por professores formados e atualizados.</p>
+                        <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Muscula%C3%A7%C3%A3o%20Premium!" class="btn-saiba-mais" target="_blank" rel="noopener">Agendar Aula Grátis</a>
+                    </div>
+                </div>
+                <div class="modalidade-card animar">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=600&q=80');">
+                        <div class="card-img-overlay"><span class="card-img-icon">🕺</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Aulas Coletivas</h3>
+                        <span class="destaque-tag">+30 horários semanais</span>
+                        <p>Spinning, Zumba, Jump, Abdominal, Funcional Coletivo e muito mais. A energia da turma te leva mais longe!</p>
+                        <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Quero%20saber%20sobre%20as%20Aulas%20Coletivas!" class="btn-saiba-mais" target="_blank" rel="noopener">Ver Calendário</a>
+                    </div>
+                </div>
+                <div class="modalidade-card animar">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80');">
+                        <div class="card-img-overlay"><span class="card-img-icon">👨‍🏫</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Personal Trainer</h3>
+                        <span class="destaque-tag">Acompanhamento exclusivo</span>
+                        <p>Acelere seus resultados com profissionais certificados, do emagrecimento ao alto rendimento. Pacotes mensais ou sessões avulsas.</p>
+                        <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20Personal%20Trainer!" class="btn-saiba-mais" target="_blank" rel="noopener">Agendar Avaliação</a>
+                    </div>
+                </div>
+                <div class="modalidade-card animar">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600&q=80');">
+                        <div class="card-img-overlay"><span class="card-img-icon">📋</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Avaliação Física e Nutrição</h3>
+                        <span class="destaque-tag">Plano alimentar individualizado</span>
+                        <p>Avaliação completa (dobras cutâneas, bioimpedância, postural) e acompanhamento nutricional. A base de todo resultado sério.</p>
+                        <a href="https://wa.me/5521999999999?text=Quero%20agendar%20Avalia%C3%A7%C3%A3o%20F%C3%ADsica%20e%20Nutri%C3%A7%C3%A3o!" class="btn-saiba-mais" target="_blank" rel="noopener">Agendar Consulta</a>
+                    </div>
+                </div>
+                <div class="modalidade-card animar">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=600&q=80');">
+                        <div class="card-img-overlay"><span class="card-img-icon">🔥</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Área Funcional e Cross</h3>
+                        <span class="destaque-tag">Espaço dedicado</span>
+                        <p>Cordas, pneus, kettlebells e pista de corrida. Desafie seu corpo com exercícios dinâmicos e ganhe explosão e resistência.</p>
+                        <a href="https://wa.me/5521999999999?text=Quero%20treinar%20na%20%C3%81rea%20Funcional!" class="btn-saiba-mais" target="_blank" rel="noopener">Saiba Mais</a>
+                    </div>
+                </div>
+                <div class="modalidade-card animar">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80');">
+                        <div class="card-img-overlay"><span class="card-img-icon">📈</span></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Programa de Resultados</h3>
+                        <span class="destaque-tag">Reavaliação a cada 3 meses</span>
+                        <p>Acompanhamento de evolução com relatórios, ajuste de treino e suporte contínuo. Aqui, seu resultado é monitorado de verdade.</p>
+                        <a href="https://wa.me/5521999999999?text=Quero%20participar%20do%20Programa%20de%20Resultados!" class="btn-saiba-mais" target="_blank" rel="noopener">Quero Participar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section class="section planos-section" id="planos">
+        <div class="section-inner">
+            <h2 class="section-title animar">Escolha seu plano e comece hoje 💪</h2>
+            <p class="section-subtitle animar">Todos os planos incluem acesso total às áreas de musculação, aulas coletivas e avaliação física.</p>
+            <div class="planos-grid">
+                <div class="plano-card animar">
+                    <h3>Mensal</h3>
+                    <div class="plano-preco">R$ 149<small>/mês</small></div>
+                    <ul class="plano-beneficios">
+                        <li>Acesso total à musculação</li>
+                        <li>Aulas coletivas inclusas</li>
+                        <li>Avaliação física gratuita</li>
+                        <li>Sem fidelidade</li>
+                    </ul>
+                    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Mensal!" class="btn-plano" target="_blank" rel="noopener">Quero Este Plano</a>
+                </div>
+                <div class="plano-card destaque animar">
+                    <span class="plano-badge">Mais Popular</span>
+                    <h3>Trimestral</h3>
+                    <div class="plano-preco">R$ 129<small>/mês</small></div>
+                    <ul class="plano-beneficios">
+                        <li>Tudo do plano mensal</li>
+                        <li>Desconto de 13%</li>
+                        <li>1 avaliação extra</li>
+                        <li>Acesso a eventos exclusivos</li>
+                    </ul>
+                    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Trimestral!" class="btn-plano" target="_blank" rel="noopener">Quero Este Plano</a>
+                </div>
+                <div class="plano-card animar">
+                    <h3>Semestral</h3>
+                    <div class="plano-preco">R$ 109<small>/mês</small></div>
+                    <ul class="plano-beneficios">
+                        <li>Tudo do plano trimestral</li>
+                        <li>Desconto de 27%</li>
+                        <li>Nutricionista (1 consulta)</li>
+                        <li>Kit boas-vindas</li>
+                    </ul>
+                    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Semestral!" class="btn-plano" target="_blank" rel="noopener">Quero Este Plano</a>
+                </div>
+                <div class="plano-card animar">
+                    <span class="plano-badge" style="background:#0d9488;">Melhor Custo-Benefício</span>
+                    <h3>Anual</h3>
+                    <div class="plano-preco"><span class="riscado">R$149</span> R$ 89<small>/mês</small></div>
+                    <ul class="plano-beneficios">
+                        <li>Tudo do plano semestral</li>
+                        <li>40% de economia</li>
+                        <li>Personal Trainer (2 sessões)</li>
+                        <li>Bloqueio de preço por 12 meses</li>
+                    </ul>
+                    <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20Anual!" class="btn-plano" target="_blank" rel="noopener">Quero Este Plano</a>
+                </div>
+            </div>
+            <div class="planos-cta-central animar">
+                <a href="https://wa.me/5521999999999?text=Quero%20ver%20todos%20os%20planos%20e%20promo%C3%A7%C3%B5es!" class="btn-hero btn-hero-primary" target="_blank" rel="noopener">Ver Todos os Planos e Promoções</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="section depoimentos-section" id="depoimentos">
+        <div class="section-inner">
+            <h2 class="section-title animar">+3.000 vidas transformadas</h2>
+            <p class="section-subtitle animar">Veja o que nossos alunos dizem sobre a Proquality Ilha Clube.</p>
+            <div class="depoimentos-mural">
+                <div class="depoimento-destaque animar">
+                    <div class="antes-depois">
+                        <span>Antes: 92kg</span><span>Depois: 76kg</span>
+                    </div>
+                    <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                    <blockquote>"Entrei na Proquality há 8 meses e perdi 16kg! Os professores são incríveis, o ambiente é motivador. Melhor decisão da minha vida! Indico para todo mundo que quer resultado de verdade."</blockquote>
+                    <p style="font-weight:700;margin-top:10px;">— Lucas M., Ilha do Governador</p>
+                </div>
+                <div class="depoimentos-lateriais animar">
+                    <div class="depoimento-mini">
+                        <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                        <p>"A energia das aulas coletivas é contagiante! Spinning com a galera é o ponto alto do meu dia."</p>
+                        <p class="autor">— Amanda R., Cidade Universitária</p>
+                    </div>
+                    <div class="depoimento-mini">
+                        <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                        <p>"Equipamentos de ponta, professores atenciosos. Saí do sedentarismo e ganhei massa magra em 4 meses."</p>
+                        <p class="autor">— Rafael T., Jardim Guanabara</p>
+                    </div>
+                    <div class="depoimento-mini">
+                        <div class="estrelas">⭐⭐⭐⭐⭐</div>
+                        <p>"A avaliação física e o acompanhamento nutricional fizeram toda diferença. Super recomendo!"</p>
+                        <p class="autor">— Juliana S., Portuguesa</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:24px;" class="animar">
+                <a href="https://g.page/proquality" target="_blank" rel="noopener" class="btn-hero btn-hero-secondary" style="color:var(--preto);border-color:var(--preto);">Deixe sua avaliação no Google ⭐</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="section">
+        <div class="section-inner">
+            <h2 class="section-title animar">Siga a gente no Instagram<br>@proqualityilhaclube</h2>
+            <div class="insta-grid animar">
+                <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&q=80');"><div class="insta-overlay">📸</div></div>
+                <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&q=80');"><div class="insta-overlay">📸</div></div>
+                <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=300&q=80');"><div class="insta-overlay">📸</div></div>
+                <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=300&q=80');"><div class="insta-overlay">📸</div></div>
+                <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=300&q=80');"><div class="insta-overlay">📸</div></div>
+                <div class="insta-item" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&q=80');"><div class="insta-overlay">📸</div></div>
+            </div>
+            <div style="text-align:center;margin-top:20px;" class="animar">
+                <a href="https://instagram.com/proqualityilhaclube" target="_blank" rel="noopener" class="btn-saiba-mais">Ver Perfil no Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPE -->
+    <section class="section equipe-section">
+        <div class="section-inner">
+            <h2 class="section-title animar">Quem te leva mais longe</h2>
+            <p class="section-subtitle animar">Profissionais dedicados e certificados para guiar cada passo da sua evolução.</p>
+            <div class="equipe-grid animar">
+                <div class="equipe-avatar" onclick="alert('Coordenador Técnico — CREF 012345-G/RJ. Mais de 15 anos de experiência em musculação e condicionamento físico.')">
+                    <div class="avatar-img" style="background-image: url('https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=200&q=80');"></div>
+                    <h4>Prof. Marcelo</h4>
+                    <p>Coordenador Técnico</p>
+                    <span class="cref">CREF 012345-G/RJ</span>
+                </div>
+                <div class="equipe-avatar" onclick="alert('Personal Trainer Sênior — CREF 067890-G/RJ. Especialista em hipertrofia e emagrecimento.')">
+                    <div class="avatar-img" style="background-image: url('https://images.unsplash.com/photo-1544168190-79c17527004f?w=200&q=80');"></div>
+                    <h4>Profª. Camila</h4>
+                    <p>Personal Trainer Sênior</p>
+                    <span class="cref">CREF 067890-G/RJ</span>
+                </div>
+                <div class="equipe-avatar" onclick="alert('Professor de Spinning — CREF 023456-G/RJ. Energia contagiante e playlists que motivam!')">
+                    <div class="avatar-img" style="background-image: url('https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=200&q=80');"></div>
+                    <h4>Prof. Diego</h4>
+                    <p>Spinning & Aulas Coletivas</p>
+                    <span class="cref">CREF 023456-G/RJ</span>
+                </div>
+                <div class="equipe-avatar" onclick="alert('Nutricionista — CRN 12345. Planos alimentares personalizados para emagrecimento, hipertrofia e bem-estar.')">
+                    <div class="avatar-img" style="background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&q=80');"></div>
+                    <h4>Dra. Fernanda</h4>
+                    <p>Nutricionista</p>
+                    <span class="cref">CRN 12345</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section class="section" id="contato">
+        <div class="section-inner">
+            <h2 class="section-title animar">Treine no coração do Rio</h2>
+            <div class="loc-grid animar">
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.5!2d-43.2!3d-22.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ4JzAwLjAiUyA0M8KwMTInMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1717000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização da Proquality Ilha Clube"></iframe>
+                </div>
+                <div class="loc-info">
+                    <div class="loc-info-item">
+                        <span class="loc-icon">📍</span>
+                        <div><strong>Endereço:</strong><br>Rua X, número Y, Bairro — Ilha do Governador<br>Rio de Janeiro – RJ, CEP 21941-000</div>
+                    </div>
+                    <div class="loc-info-item">
+                        <span class="loc-icon">📞</span>
+                        <div><strong>Telefone:</strong> (21) 9199938-2409<br><strong>WhatsApp:</strong> (21) 9199938-2409</div>
+                    </div>
+                    <div class="loc-info-item">
+                        <span class="loc-icon">🕐</span>
+                        <div><strong>Horários:</strong><br>Seg-Sex: 06h às 22h<br>Sábado: 08h às 16h<br>Domingo: 09h às 13h</div>
+                    </div>
+                    <div class="loc-info-item">
+                        <span class="loc-icon">🗺️</span>
+                        <div>Próximo ao metrô estação X / Em frente ao shopping Y</div>
+                    </div>
+                    <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-saiba-mais" style="align-self:flex-start;">Traçar Rota no Google Maps</a>
+                    <div class="loc-fotos">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=150&q=80" alt="Fachada da academia" onclick="openLightbox(this.src)">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=150&q=80" alt="Interior da academia" onclick="openLightbox(this.src)">
+                        <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=150&q=80" alt="Área funcional" onclick="openLightbox(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background:#fafafa;">
+        <div class="section-inner">
+            <h2 class="section-title animar">Tire suas dúvidas</h2>
+            <div class="faq-list animar">
+                <div class="faq-item">
+                    <button class="faq-question">Preciso de avaliação física antes de começar? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">Sim! A avaliação física é gratuita e inclusa em todos os planos. Ela é fundamental para montarmos um treino personalizado e seguro para você. <a href="#planos" style="color:var(--laranja);">Confira nossos planos</a> e agende a sua.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Vocês oferecem aula experimental gratuita? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">Sim! Agende sua aula grátis e conheça nossa estrutura sem compromisso. É só chamar no WhatsApp ou clicar em qualquer botão "Aula Grátis" do site.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Tem plano sem fidelidade? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">Temos sim! O plano mensal não possui fidelidade. Também oferecemos planos trimestrais, semestrais e anuais com descontos progressivos. Veja na <a href="#planos" style="color:var(--laranja);">seção Planos</a>.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Posso treinar em qualquer horário? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">Seu plano dá acesso livre nos horários de funcionamento (seg-sex 06h-22h, sáb 08h-16h, dom 09h-13h). Aulas coletivas têm grade própria — consulte o calendário na recepção ou pelo WhatsApp.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Tem estacionamento? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer">Sim! Dispomos de estacionamento conveniado próximo à academia. Consulte condições na recepção. Veja a <a href="#contato" style="color:var(--laranja);">localização no mapa</a>.</div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:24px;" class="animar">
+                <a href="https://wa.me/5521999999999?text=Ol%C3%A1!%20Ainda%20tenho%20d%C3%BAvidas..." class="btn-saiba-mais" target="_blank" rel="noopener">Ainda tem dúvidas? Chame no WhatsApp 💬</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final animar">
+        <h2>Sua melhor versão começa aqui</h2>
+        <p>Agende sua aula grátis e ganhe <strong>20% off</strong> na primeira mensalidade!</p>
+        <div class="cta-input-group">
+            <input type="tel" placeholder="Seu telefone ou e-mail" aria-label="Telefone ou e-mail para contato">
+            <button class="btn-cta-final" onclick="alert('Obrigado! Entraremos em contato em breve com seu cupom PROQUALITY20.')">Quero Aproveitar</button>
+        </div>
+        <div class="cupom-badge">Use o cupom: PROQUALITY20</div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo-watermark">Proquality Ilha Clube</div>
+                <p><strong>Academia Qualityzone LTDA</strong></p>
+                <p>CNPJ: 40.178.481/0001-44</p>
+                <p>Nome fantasia: Proquality Ilha Clube</p>
+                <p style="margin-top:8px;">Sua melhor versão começa aqui.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links Úteis</h4>
+                <a href="#hero">Início</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#modalidades">Modalidades</a>
+                <a href="#planos">Planos</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#contato">Contato</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>📍 Rua X, nº Y, Ilha do Governador<br>Rio de Janeiro – RJ</p>
+                <p>📞 (21) 9199938-2409</p>
+                <p>📧 contato@proquality.com.br</p>
+                <p>🕐 Seg-Sex: 06h-22h</p>
+            </div>
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+                <div class="footer-social">
+                    <a href="https://instagram.com/proqualityilhaclube" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+                    <a href="https://facebook.com/proqualityilhaclube" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+                    <a href="https://tiktok.com/@proqualityilhaclube" target="_blank" rel="noopener" aria-label="TikTok">🎵</a>
+                    <a href="https://youtube.com/@proqualityilhaclube" target="_blank" rel="noopener" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Academia Qualityzone LTDA – Todos os direitos reservados. Proquality Ilha Clube – Sua melhor versão começa aqui.
+        </div>
+    </footer>
+
+    <!-- BOTÃO WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5521999999999?text=Vamos%20treinar?%20%F0%9F%92%AA" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+    <div class="whatsapp-tooltip" id="whatsappTooltip">Vamos treinar? 💪</div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img src="" alt="Foto ampliada" id="lightboxImg">
+    </div>
+
+    <script>
+        // HEADER SCROLL
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            if (currentScroll > 60) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // MOBILE MENU
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        document.querySelectorAll('[data-close]').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // HERO SLIDER
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('#heroDots span');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        let slideInterval = setInterval(nextSlide, 6000);
+
+        function goToSlide(index) {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+            // Reinicia animação do conteúdo
+            const content = slides[currentSlide].querySelector('.hero-content');
+            if (content) {
+                content.style.animation = 'none';
+                content.offsetHeight;
+                content.style.animation = 'fadeInUp 0.8s ease';
+            }
+        }
+
+        function nextSlide() {
+            goToSlide((currentSlide + 1) % totalSlides);
+        }
+
+        function prevSlide() {
+            goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+        }
+        document.getElementById('heroNext').addEventListener('click', () => { nextSlide();
+            resetInterval(); });
+        document.getElementById('heroPrev').addEventListener('click', () => { prevSlide();
+            resetInterval(); });
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(parseInt(dot.dataset.slide));
+                resetInterval();
+            });
+        });
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 6000);
+        }
+
+        // FAQ ACCORDION
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                // Fecha todos
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                // Abre o clicado se não estava ativo
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // ANIMAÇÕES DE ENTRADA (Intersection Observer)
+        const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visivel');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.animar, .animar-fade').forEach(el => observer.observe(el));
+
+        // LIGHTBOX
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightboxImg');
+            img.src = src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+        // WHATSAPP TOOLTIP
+        const tooltip = document.getElementById('whatsappTooltip');
+        setTimeout(() => { tooltip.classList.add('show'); }, 2000);
+        setTimeout(() => { tooltip.classList.remove('show'); }, 8000);
+        setInterval(() => {
+            tooltip.classList.add('show');
+            setTimeout(() => { tooltip.classList.remove('show'); }, 5000);
+        }, 25000);
+
+        // RIPPLE EFFECT NOS BOTÕES
+        document.querySelectorAll('.ripple').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${e.clientX - rect.left - size/2}px;
+                    top: ${e.clientY - rect.top - size/2}px;
+                    background: rgba(255,255,255,0.4);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple-anim 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                this.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            });
+        });
+
+        // Adiciona estilo para o ripple
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes ripple-anim {
+                to { transform: scale(4); opacity: 0; }
+            }
+            .ripple { position: relative; overflow: hidden; }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // INICIALIZA PRIMEIRO SLIDE
+        goToSlide(0);
+    </script>
+</body>
+</html>
