@@ -2,26 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Presentación gratuita | Ver ahora</title>
   
-  <!-- Script de rendimiento (timeOrigin) solicitado para carga rápida -->
+  <!-- Script de rendimiento (timeOrigin) -->
   <script>
     !function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);
   </script>
 
-  <!-- Preloads para cargar más rápido los recursos del reproductor -->
+  <!-- Preloads para carga rápida del reproductor -->
   <link rel="preload" href="https://scripts.converteai.net/c9d3a84e-29b3-4d36-b0c6-cc1bea58a1ac/players/6a1f63e1544d592ebd79121a/v4/player.js" as="script">
   <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
   <link rel="preload" href="https://cdn.converteai.net/c9d3a84e-29b3-4d36-b0c6-cc1bea58a1ac/6a1f63d3544d592ebd7911cd/main.m3u8" as="fetch">
   
-  <!-- DNS prefetch para dominios de video y recursos -->
   <link rel="dns-prefetch" href="https://cdn.converteai.net">
   <link rel="dns-prefetch" href="https://scripts.converteai.net">
   <link rel="dns-prefetch" href="https://images.converteai.net">
   <link rel="dns-prefetch" href="https://license.vturb.com">
 
   <style>
+    /* Reset básico y diseño lo más parecido a la imagen original */
     * {
       margin: 0;
       padding: 0;
@@ -29,169 +29,150 @@
     }
 
     body {
-      background: linear-gradient(145deg, #f1f5f9 0%, #e6edf4 100%);
-      font-family: system-ui, 'Segoe UI', 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
-      min-height: 100vh;
+      /* Fondo neutro, sin gradientes llamativos — como la imagen de referencia */
+      background: #eef2f5;
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5rem;
+      min-height: 100vh;
+      padding: 2rem;
     }
 
-    /* Tarjeta principal: acoge tanto el video como el texto y botón */
+    /* Tarjeta simple, sin efectos de vidrio, sombra suave y bordes redondeados moderados */
     .card {
-      background: rgba(255, 255, 255, 0.98);
-      max-width: 780px;
+      max-width: 700px;
       width: 100%;
-      padding: 2rem 2rem 2.8rem;
-      border-radius: 2.5rem;
-      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.02);
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 2rem 2rem 2.5rem;
       text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      border: 1px solid #e2e8f0;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Contenedor del video: sustituye el espacio que ocuparía la imagen original */
-    .video-container {
+    /* Contenedor del video: reemplaza la imagen original exactamente */
+    .video-wrapper {
       margin-bottom: 2rem;
-      border-radius: 1.5rem;
+      background: #f8fafc;
+      border-radius: 12px;
       overflow: hidden;
-      background: #0000000d;
-      box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.2);
-      line-height: 0; /* elimina espacio extra debajo del iframe/webcomponent */
+      line-height: 0;
     }
 
-    /* Estilos para el smartplayer: centrado y ancho completo */
     vturb-smartplayer {
       display: block;
-      margin: 0 auto;
       width: 100%;
-      aspect-ratio: 16 / 9; /* Para mantener proporción profesional mientras carga */
-      background: #0a0c10;
+      aspect-ratio: 16 / 9;
+      background: #0f172a;
     }
 
-    /* Texto principal equivalente al de la imagen original, traducido al español */
+    /* Texto principal: mismo estilo funcional, sin florituras */
     .mensaje {
-      font-size: 1.65rem;
-      line-height: 1.45;
-      color: #0a1e2f;
+      font-size: 1.5rem;
       font-weight: 500;
-      margin-bottom: 2rem;
-      letter-spacing: -0.01em;
+      color: #1e293b;
+      margin-bottom: 1.8rem;
+      line-height: 1.4;
     }
 
-    /* Palabra GRATIS destacada */
-    .gratis-destacado {
-      background: linear-gradient(125deg, #c2410c, #e07a2c);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+    /* Palabra "GRATIS" destacada de forma sutil pero legible */
+    .gratis {
       font-weight: 700;
+      background: none;
+      color: #b45309;
       display: inline-block;
     }
 
-    /* Botón VER AHORA → redirige a thegoogle.html */
+    /* Botón: clásico, minimalista, muy parecido al "WATCH NOW" de la imagen */
     .btn-watch {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.65rem;
-      background: linear-gradient(105deg, #0f2b3d 0%, #1b4a6e 100%);
+      gap: 0.6rem;
+      background-color: #1e3a5f;
       color: white;
-      font-size: 1.3rem;
-      font-weight: 600;
-      padding: 0.9rem 2.2rem;
-      border-radius: 60px;
       text-decoration: none;
-      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      box-shadow: 0 10px 20px -8px rgba(0, 32, 64, 0.3);
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 40px;
+      transition: background 0.2s, transform 0.05s linear;
       border: none;
       cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
       letter-spacing: 0.3px;
     }
 
     .btn-watch:hover {
-      background: linear-gradient(105deg, #1b4a6e, #0f2b3d);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.35);
+      background-color: #0f2c48;
+      transform: scale(1.02);
     }
 
     .btn-watch:active {
-      transform: translateY(2px);
-      transition: 0.05s linear;
+      transform: scale(0.98);
     }
 
-    .btn-watch .arrow {
+    .arrow {
       font-size: 1.3rem;
-      transition: transform 0.2s ease;
-      display: inline-block;
+      font-weight: 500;
+      transition: transform 0.15s;
     }
 
     .btn-watch:hover .arrow {
-      transform: translateX(5px);
+      transform: translateX(4px);
     }
 
-    /* Responsive: ajusta padding y tamaños en móviles */
-    @media (max-width: 640px) {
+    /* Para móviles: texto y botón ligeramente más pequeños */
+    @media (max-width: 550px) {
+      body {
+        padding: 1rem;
+      }
       .card {
-        padding: 1.5rem 1.2rem 2rem;
+        padding: 1.5rem;
       }
       .mensaje {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
       }
       .btn-watch {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+      }
+      .arrow {
         font-size: 1.1rem;
-        padding: 0.75rem 1.8rem;
-        gap: 0.5rem;
       }
-      .btn-watch .arrow {
-        font-size: 1.15rem;
-      }
-    }
-
-    /* Soporte para cuando el reproductor aún no está listo: fondo elegante */
-    .video-container:empty {
-      background: #e9eef3;
-      border-radius: 1.5rem;
-      min-height: 220px;
     }
   </style>
 </head>
 <body>
 
 <div class="card">
-  <!-- REPRODUCTOR DE VIDEO: reemplaza completamente la imagen de la referencia original -->
-  <div class="video-container">
+  <!-- REPRODUCTOR DE VIDEO (en lugar de la imagen original) -->
+  <div class="video-wrapper">
     <vturb-smartplayer 
       id="vid-6a1f63e1544d592ebd79121a" 
-      style="display: block; margin: 0 auto; width: 100%; aspect-ratio: 16 / 9;">
+      style="display: block; margin: 0 auto; width: 100%;">
     </vturb-smartplayer>
   </div>
 
-  <!-- Texto original adaptado al español: "Click the button below to watch the presentation FREE!" -->
+  <!-- Texto traducido fiel al español, mismo mensaje que la imagen -->
   <div class="mensaje">
     Haz clic en el botón de abajo para ver la presentación 
-    <span class="gratis-destacado">¡GRATIS!</span>
+    <span class="gratis">¡GRATIS!</span>
   </div>
 
-  <!-- Botón que lleva exactamente a "thegoogle.html" -->
+  <!-- Botón que redirige a "thegoogle.html" igual que antes -->
   <a href="thegoogle.html" class="btn-watch">
     VER AHORA <span class="arrow">→</span>
   </a>
 </div>
 
-<!-- Script del reproductor (carga asíncrona pero con preloads ya definidos en <head>) -->
+<!-- Script del reproductor (carga asíncrona, sin afectar diseño) -->
 <script type="text/javascript">
   (function() {
     var s = document.createElement("script");
     s.src = "https://scripts.converteai.net/c9d3a84e-29b3-4d36-b0c6-cc1bea58a1ac/players/6a1f63e1544d592ebd79121a/v4/player.js";
     s.async = true;
-    s.defer = true;   // defer para no bloquear pintado, pero conserva orden
+    s.defer = true;
     document.head.appendChild(s);
   })();
 </script>
