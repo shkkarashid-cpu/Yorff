@@ -1,181 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presentación gratuita | Ver ahora</title>
-  
-  <!-- Script de rendimiento (timeOrigin) -->
-  <script>
-    !function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);
-  </script>
-
-  <!-- Preloads para carga rápida del reproductor -->
-  <link rel="preload" href="https://scripts.converteai.net/c9d3a84e-29b3-4d36-b0c6-cc1bea58a1ac/players/6a1f63e1544d592ebd79121a/v4/player.js" as="script">
-  <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-  <link rel="preload" href="https://cdn.converteai.net/c9d3a84e-29b3-4d36-b0c6-cc1bea58a1ac/6a1f63d3544d592ebd7911cd/main.m3u8" as="fetch">
-  
-  <link rel="dns-prefetch" href="https://cdn.converteai.net">
-  <link rel="dns-prefetch" href="https://scripts.converteai.net">
-  <link rel="dns-prefetch" href="https://images.converteai.net">
-  <link rel="dns-prefetch" href="https://license.vturb.com">
-
-  <style>
-    /* Reset básico y diseño lo más parecido a la imagen original */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      /* Fondo neutro, sin gradientes llamativos — como la imagen de referencia */
-      background: #eef2f5;
-      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 2rem;
-    }
-
-    /* Tarjeta simple, sin efectos de vidrio, sombra suave y bordes redondeados moderados */
-    .card {
-      max-width: 700px;
-      width: 100%;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      padding: 2rem 2rem 2.5rem;
-      text-align: center;
-      border: 1px solid #e2e8f0;
-    }
-
-    /* Contenedor del video: reemplaza la imagen original exactamente */
-    .video-wrapper {
-      margin-bottom: 2rem;
-      background: #f8fafc;
-      border-radius: 12px;
-      overflow: hidden;
-      line-height: 0;
-    }
-
-    vturb-smartplayer {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #0f172a;
-    }
-
-    /* Texto principal: mismo estilo funcional, sin florituras */
-    .mensaje {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #1e293b;
-      margin-bottom: 1.8rem;
-      line-height: 1.4;
-    }
-
-    /* Palabra "GRATIS" destacada de forma sutil pero legible */
-    .gratis {
-      font-weight: 700;
-      background: none;
-      color: #b45309;
-      display: inline-block;
-    }
-
-    /* Botón: clásico, minimalista, muy parecido al "WATCH NOW" de la imagen */
-    .btn-watch {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background-color: #1e3a5f;
-      color: white;
-      text-decoration: none;
-      font-size: 1.25rem;
-      font-weight: 600;
-      padding: 0.75rem 2rem;
-      border-radius: 40px;
-      transition: background 0.2s, transform 0.05s linear;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      letter-spacing: 0.3px;
-    }
-
-    .btn-watch:hover {
-      background-color: #0f2c48;
-      transform: scale(1.02);
-    }
-
-    .btn-watch:active {
-      transform: scale(0.98);
-    }
-
-    .arrow {
-      font-size: 1.3rem;
-      font-weight: 500;
-      transition: transform 0.15s;
-    }
-
-    .btn-watch:hover .arrow {
-      transform: translateX(4px);
-    }
-
-    /* Para móviles: texto y botón ligeramente más pequeños */
-    @media (max-width: 550px) {
-      body {
-        padding: 1rem;
-      }
-      .card {
-        padding: 1.5rem;
-      }
-      .mensaje {
-        font-size: 1.25rem;
-      }
-      .btn-watch {
-        font-size: 1rem;
-        padding: 0.6rem 1.5rem;
-      }
-      .arrow {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación de Cocina</title>
+    <style>
+        body {
+            background-color: maroon; /* Cor de fundo marrom escura similar à imagem */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .presentation-container {
+            text-align: center;
+            max-width: 600px; /* Ajuste conforme necessário */
+            padding: 20px;
+        }
+        .presentation-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Bordas arredondadas da imagem */
+            margin-bottom: 20px;
+        }
+        .headline {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: red; /* Destaque em vermelho para 'GRATIS!' */
+        }
+        .watch-button {
+            display: inline-block;
+            background-color: #f44336; /* Vermelho do botão (exemplo de cor, ajuste se desejar) */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        .watch-button:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
-
-<div class="card">
-  <!-- REPRODUCTOR DE VIDEO (en lugar de la imagen original) -->
-  <div class="video-wrapper">
-    <vturb-smartplayer 
-      id="vid-6a1f63e1544d592ebd79121a" 
-      style="display: block; margin: 0 auto; width: 100%;">
-    </vturb-smartplayer>
-  </div>
-
-  <!-- Texto traducido fiel al español, mismo mensaje que la imagen -->
-  <div class="mensaje">
-    Haz clic en el botón de abajo para ver la presentación 
-    <span class="gratis">¡GRATIS!</span>
-  </div>
-
-  <!-- Botón que redirige a "thegoogle.html" igual que antes -->
-  <a href="thegoogle.html" class="btn-watch">
-    VER AHORA <span class="arrow">→</span>
-  </a>
-</div>
-
-<!-- Script del reproductor (carga asíncrona, sin afectar diseño) -->
-<script type="text/javascript">
-  (function() {
-    var s = document.createElement("script");
-    s.src = "https://scripts.converteai.net/c9d3a84e-29b3-4d36-b0c6-cc1bea58a1ac/players/6a1f63e1544d592ebd79121a/v4/player.js";
-    s.async = true;
-    s.defer = true;
-    document.head.appendChild(s);
-  })();
-</script>
-
+    <div class="presentation-container">
+        <img src="imagen_presentacion.jpg" alt="Imagen de preparación de cocina (aceite sobre melón a la izquierda, especias a la derecha)" class="presentation-image">
+        
+        <p class="headline">Haga clic en el botón de abajo para ver la presentación <span class="highlight">GRATIS!</span></p>
+        
+        <a href="thegoogle.html" class="watch-button">VER AHORA →</a>
+    </div>
 </body>
 </html>
