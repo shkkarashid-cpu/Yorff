@@ -1,0 +1,36 @@
+    </div>
+
+    <!-- Scripts de Dinamismo -->
+    <script>
+        // 1. Lógica da Data Automática
+        const dateElement = document.getElementById('dynamic-date');
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); // Janeiro é 0!
+        const yyyy = today.getFullYear();
+        dateElement.innerText = dd + '/' + mm + '/' + yyyy;
+
+        // 2. Lógica de Pessoas Assistindo (Atualiza automaticamente)
+        const viewersElement = document.getElementById('live-viewers');
+        // Começa com um número aleatório próximo a 836
+        let currentViewers = Math.floor(Math.random() * (850 - 800 + 1)) + 800; 
+        viewersElement.innerText = currentViewers;
+
+        // Função para oscilar o número de espectadores a cada 4 segundos
+        setInterval(() => {
+            // Pode aumentar até 5 ou diminuir até 2 pessoas para parecer real
+            const fluctuation = Math.floor(Math.random() * 8) - 2;
+            currentViewers += fluctuation;
+            
+            // Efeito visual sutil quando o número muda
+            viewersElement.style.backgroundColor = "rgba(255,255,255,0.5)";
+            setTimeout(() => {
+                 viewersElement.style.backgroundColor = "rgba(255,255,255,0.2)";
+            }, 300);
+
+            viewersElement.innerText = currentViewers;
+        }, 4000);
+    </script>
+
+</body>
+</html>
